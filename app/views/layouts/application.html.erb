@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MeetingPoint</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>MeetingPoint</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'  %>
-  </head>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+
+<div class="navbar navbar-default navbar-static-top bg-secondary">
+  <div class="container">
+    <%= link_to "Место встречи изменить нельзя", root_path, class: 'navbar-brand text-white' %>
+
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Link1", "/path1" %></li>
+        <li><%= link_to "Link2", "/path2" %></li>
+        <li><%= link_to "Link3", "/path3" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= yield %>
+</body>
 </html>
