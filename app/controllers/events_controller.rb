@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
   # GET /events
   def index
@@ -8,11 +9,12 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
@@ -21,7 +23,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
@@ -46,14 +48,14 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def event_params
-      #params.fetch(:event, {}).permit(:title, :address, :datetime, :description)
-      params.require(:event).permit(:title, :address, :datetime, :description)
-    end
+  def set_current_user_event
+    @event = current_user.events.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def event_params
+    #params.fetch(:event, {}).permit(:title, :address, :datetime, :description)
+    params.require(:event).permit(:title, :address, :datetime, :description)
+  end
 end
