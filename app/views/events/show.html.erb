@@ -18,7 +18,7 @@
           </div>
 
           <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top">
+            <div class="buffer-both">
               <%= link_to t('devise.registrations.edit.update'), edit_event_path(@event), class: 'btn btn-primary' %>
               <%= link_to t('devise.shared.links.delet'), event_path(@event), method: :delete,
                           data:{confirm: t('devise.registrations.edit.are_you_sure')}, class: 'btn btn-danger' %>
