@@ -19,6 +19,7 @@ require("channels")
 import 'bootstrap'
 import '../stylesheets/application.scss'
 import 'plugins/flatpickr'
+import '@fortawesome/fontawesome-free/js/all'
 
 
 

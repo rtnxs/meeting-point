@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @new_comment = @event.comments.builds(comment_params)
+    @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
     if @new_comment.save
@@ -27,15 +27,9 @@ class CommentsController < ApplicationController
     redirect_to @event, message
   end
 
-  ## DELETE /comments/1
-  #def destroy
-  #  @comment.destroy
-  #  redirect_to comments_url, notice: 'Comment was successfully destroyed.'
-  #end
-
   private
 
-  def det_event
+  def set_event
     @event = Event.find(params[:event_id])
   end
 

@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_110223) do
     t.string "user_name"
     t.string "user_email"
     t.integer "event_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_subscriptions_on_event_id"

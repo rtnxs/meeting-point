@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_event, only: [:show]
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
   # GET /events
@@ -9,7 +10,8 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
-    @event = Event.find(params[:id])
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   # GET /events/new
@@ -49,11 +51,14 @@ class EventsController < ApplicationController
 
   private
 
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
   def set_current_user_event
     @event = current_user.events.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def event_params
     #params.fetch(:event, {}).permit(:title, :address, :datetime, :description)
     params.require(:event).permit(:title, :address, :datetime, :description)
