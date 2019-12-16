@@ -21,7 +21,7 @@
             <div class="buffer-both">
               <%= link_to t('devise.registrations.edit.update'), edit_event_path(@event), class: 'btn btn-primary' %>
               <%= link_to t('devise.shared.links.delet'), event_path(@event), method: :delete,
-                          data:{confirm: t('devise.registrations.edit.are_you_sure')}, class: 'btn btn-danger' %>
+                          data: {confirm: t('devise.registrations.edit.are_you_sure')}, class: 'btn btn-danger' %>
             </div>
           <% end %>
         </div>
@@ -56,14 +56,18 @@
           </p>
         </div>
       </div>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {
-              subscription: @new_subscription || @event.subscriptions.build
-          } %>
+
+      <% unless @event.user == current_user %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: {
+                subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
         </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
 
