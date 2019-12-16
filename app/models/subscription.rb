@@ -5,7 +5,6 @@ class Subscription < ApplicationRecord
   belongs_to :user, optional: true
 
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
-  validate :can_subscribe?, on: :create, if: -> { user.present? }
   validates :user_name, presence: true, unless: -> { user.present? }
   validate :email_used?, on: :create, unless: -> { user.present? }
   validates :user_email, presence: true, format: EMAIL_REGEXP, unless: -> { user.present? }
