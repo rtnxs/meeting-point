@@ -51,11 +51,18 @@ ru:
     users:
       updated: Данные обновлены
       edit: Редактирование
+    comments:
+      created: Комментарий добавлен
+      destroyed: Комментарий удалён
+      error: Ошибка с комментарием
 
 
   app:
     name: Место встречи изменить нельзя
     company: Абыр Абыр
+  comments:
+    comment:
+      destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
 
 
   devise:

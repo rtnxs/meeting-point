@@ -1,11 +1,11 @@
 class Comment < ApplicationRecord
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :body, presence: true
-  validates :user_name, presence: true, unless: 'user.present?'
+  validates :user_name, presence: true, unless: -> { user.present? }
 
   def user_name
-    user_name.present? ? user_name : super
-  end
+    user.present? ? user.name : super
+   end
 end
