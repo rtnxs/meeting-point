@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :comments
+  has_many :subscriptions
 
   validates :name, presence: true, length: {maximum: 35}
   #validates :email, presence: true, uniqueness: true, length: {maximum: 255}, format: {with: EMAIL_REGEXP} #TODO
