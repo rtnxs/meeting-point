@@ -13,7 +13,6 @@ ru:
         confirmation_token: Токен подтверждения
         confirmed_at: Дата подтверждения
         created_at: Дата создания
-        password: Пароль
         current_password: Текущий пароль
         current_sign_in_at: Дата текущего входа
         current_sign_in_ip: IP текущего входа
@@ -197,6 +196,8 @@ ru:
         many: "сохранение не удалось из-за %{count} ошибок:"
         one: "сохранение не удалось из-за %{count} ошибки:"
         other: "сохранение не удалось из-за %{count} ошибки:"
+      event:
+        date_pass: вы не можете создавать события в прошлом
 
   question:
     zero: '%{count} вопросов'

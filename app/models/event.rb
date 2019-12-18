@@ -12,6 +12,6 @@ class Event < ApplicationRecord
   private
 
   def check_datetime
-    errors.add(:datetime, 'Вы не можете создавать события в прошлом') if datetime&. < Time.current - 240
+    errors.add(:datetime, t('errors.messages.event.date_pass')) if datetime&. < Time.current - 240
   end
 end
