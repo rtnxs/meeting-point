@@ -44,13 +44,13 @@
 
     <div class="col-md-4">
       <div class="event-owner">
-        <h4>Зовет:</h4>
+        <h4><%= t('views.event.show.organizer') %>:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
 
       <% if have_subscriptions?(@event) %>
         <div class="event-subscriptions">
-          <h4>Пойдут:</h4>
+          <h4><%= t('views.event.show.subscribed') %>:</h4>
           <div>
             <p>
               <%= render partial: 'subscriptions/subscription',
@@ -62,7 +62,6 @@
 
       <% unless @event.user == current_user %>
         <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
                 subscription: @new_subscription || @event.subscriptions.build

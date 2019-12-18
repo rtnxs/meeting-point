@@ -3,13 +3,11 @@
 
   <% unless user_signed_in? %>
     <div class="form-group">
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+      <%= f.text_field :user_name, class: 'form-control', placeholder: t('activerecord.attributes.user.name') %>
     </div>
 
     <div class="form-group">
-      <%= f.label :user_email %>
-      <%= f.text_field :user_email, class: 'form-control' %>
+      <%= f.text_field :user_email, class: 'form-control', placeholder: 'email' %>
     </div>
   <% end %>
 

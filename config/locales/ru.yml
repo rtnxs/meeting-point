@@ -31,6 +31,8 @@ ru:
         unconfirmed_email: Неподтвержденный email
         unlock_token: Токен разблокировки
         updated_at: Дата обновления
+      comment:
+        body: Текст
 
 
     models:
@@ -40,6 +42,7 @@ ru:
         one: Пользователь
         other: Пользователи
       event: Событие
+
 
 
   controllers:
@@ -69,6 +72,12 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: Вы уверены, что хотите удалить эту подписку?
+
+  views:
+    event:
+      show:
+        organizer: Организатор
+        subscribed: Подписались
 
 
   devise:
