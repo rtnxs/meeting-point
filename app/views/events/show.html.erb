@@ -48,7 +48,7 @@
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
 
-      <% if have_subscriptions?(@event) %>
+      <% if @event.subscribers.any? %>
         <div class="event-subscriptions">
           <h4><%= t('views.event.show.subscribed') %>:</h4>
           <div>
