@@ -6,6 +6,7 @@ document.addEventListener("turbolinks:load", () => {
         enableTime: true,
         time_24hr: true,
         dateFormat: "Y-m-d H:i",
-        minDate: new Date(),
+        // minDate: new Date(),
+        defaultDate: new Date(),
     })
 })

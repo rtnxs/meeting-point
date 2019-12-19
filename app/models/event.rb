@@ -7,11 +7,6 @@ class Event < ApplicationRecord
 
   validates :title, presence: true, length: {maximum: 255}
   validates :address, :datetime, presence: true
-  validate :check_datetime, on: :create, if: -> { datetime.present?}
-
-  private
-
-  def check_datetime
-    errors.add(:datetime, t('errors.messages.event.date_pass')) if datetime&. < Time.current - 240
-  end
+  validates :datetime, inclusion: {in: (DateTime.now..), message: I18n.t('errors.messages.event.date_pass')},
+            on: :create, if: -> { datetime.present? }
 end
