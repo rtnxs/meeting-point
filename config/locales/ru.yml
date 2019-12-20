@@ -9,6 +9,8 @@ ru:
       user:
         name: Имя
         email: Email
+        password: Пароль
+        avatar: Аватарка
         confirmation_sent_at: Дата отправки подтверждения
         confirmation_token: Токен подтверждения
         confirmed_at: Дата подтверждения
@@ -21,7 +23,6 @@ ru:
         last_sign_in_at: Дата последнего входа
         last_sign_in_ip: IP последнего входа
         locked_at: Дата блокировки
-        password: Пароль
         password_confirmation: Подтверждение пароля
         remember_created_at: Дата создания запоминания
         remember_me: Запомнить меня
@@ -33,6 +34,8 @@ ru:
         updated_at: Дата обновления
       comment:
         body: Текст
+      photo:
+        photo: Фотография
 
 
     models:
@@ -42,6 +45,7 @@ ru:
         one: Пользователь
         other: Пользователи
       event: Событие
+      photo: Фотография
 
 
 
@@ -69,6 +73,11 @@ ru:
       created: Вы подписаны на это событие
       destroyed: Участник отписан
       error: Подписка/отписка не сработала
+    photos:
+      error: Что-то не так с фоткой
+      created: Вы добавили фотографию к событию
+      destroyed: Вы удалили фотку
+
 
 
   app:
