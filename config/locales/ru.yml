@@ -45,6 +45,14 @@ ru:
 
 
 
+    errors:
+      models:
+        event:
+          attributes:
+            datetime:
+              inclusion: вы не можете создавать события в прошлом
+
+
   controllers:
     events:
       created: Событие создано
@@ -192,7 +200,7 @@ ru:
       unlocked: Ваша учетная запись разблокирована. Теперь вы можете войти в систему.
 
 
-  errors:
+
     messages:
       already_confirmed: уже подтверждён. Пожалуйста, попробуйте войти в систему
       confirmation_period_expired: должен быть подтвержден в течение %{period}, пожалуйста, повторите запрос на подтверждение
