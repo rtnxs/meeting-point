@@ -37,7 +37,7 @@
       </div>
 
       <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} if current_user.present? %>
       </div>
 
       <div class="event-comments buffer-top">
