@@ -1,0 +1,7 @@
+<%= 'event' %>
+<h3><%= @event.title %></h3>
+<%= image_tag(@photo.photo.thumb.url)%>
+<%= link_to image_tag(@photo.photo.url), @photo.photo.url %>
+<p><%= 'autor'%> <%= @photo.user.name %></p>
+
+
