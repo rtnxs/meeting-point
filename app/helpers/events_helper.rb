@@ -18,4 +18,8 @@ module EventsHelper
       asset_path('event_thumb.jpg')
     end
   end
+
+  def cant_subscribe
+    @event.user == current_user || @event.datetime < DateTime.current
+  end
 end

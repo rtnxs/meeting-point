@@ -251,6 +251,7 @@ ru:
       email: Email
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime_f: Состоится
+      datetime_p: Состоялось
       owner: Организатор
 
