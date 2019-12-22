@@ -1,3 +1,18 @@
-<h3><%= 'event:' %><%= @event.title %></h3>
+<h1><%= t '.title' %></h1>
+
 <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
-<p><%= 'autor'%> <%= @photo.user.name %></p>
+<p><%= t'.author' %>: <strong><%= @photo.user.name %></strong></p>
+
+<hr/>
+
+<p><%= t '.event' %>: <strong><%= link_to @event.title, event_url(@event) %></strong></p>
+<p><%= t '.owner' %>: <strong><%= @event.user.name %></strong></p>
+
+<p>
+  <% if @event.datetime < DateTime.current %>
+    <%= t '.datetime_p' %>:
+  <% else %>
+    <%= t '.datetime_f' %>:
+  <% end %>
+  <strong><%= l @event.datetime, format: :long %></strong>
+</p>
