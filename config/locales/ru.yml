@@ -237,16 +237,20 @@ ru:
 
   event_mailer:
     comment:
-      title: 'Новый комментарий'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime_f: Состоится
+      datetime_p: Состоялось
+      owner: Организатор
+      text: Текст
+
     subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
+

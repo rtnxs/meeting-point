@@ -1,14 +1,18 @@
 <h1><%= t '.title' %></h1>
-<p><%= @comment.body %></p>
+<p><%= t '.text' %>: <i>"<%= @comment.body %>"</i></p>
 <p><%= t '.author' %>: <strong><%= @comment.user_name %></strong></p>
 
 <hr/>
 
-<%= t '.event' %>
-<h3><%= @event.title %></h3>
+<p><%= t '.event' %>: <strong><%= link_to @event.title, event_url(@event) %></strong></p>
+<p><%= t '.owner' %>: <strong><%= @event.user.name %></strong></p>
 
-<%= t '.datetime' %>
-<h4><%= l @event.datetime %></h4>
+<p>
+  <% if @event.datetime < DateTime.current %>
+    <%= t '.datetime_p' %>:
+  <% else %>
+    <%= t '.datetime_f' %>:
+  <% end %>
+  <strong><%= l @event.datetime, format: :long %></strong>
+</p>
 
-<%= t '.owner' %>
-<h4><%= @event.user.name %></h4>

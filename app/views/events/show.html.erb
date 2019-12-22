@@ -46,7 +46,7 @@
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
-                     collection: @event.comments.except(@new_comment) %>
+                     collection: @event.comments.except(@new_comment).order(created_at: :desc)  %>
         </div>
       </div>
     </div>
