@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'meetting-point@gplesson.com'
+  default from: 'meeetng-point@meeeting-point.herokuapp.com'
   layout 'mailer'
 end
