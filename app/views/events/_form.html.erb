@@ -3,7 +3,6 @@
 <%= form_for(@event) do |f| %>
   <%#= render partial: 'partials/form_errors', locals: {model: @event} %>
 
-
   <div class="form-group">
     <%= f.text_field :title, class: 'form-control', placeholder: t('activerecord.attributes.event.title') %>
   </div>
@@ -18,6 +17,10 @@
 
   <div class="form-group">
     <%= f.text_area :description, class: 'form-control', placeholder: t('activerecord.attributes.event.description') %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :pincode, class: 'form-control', placeholder: t('activerecord.attributes.event.pincode') %>
   </div>
 
   <div class="actions">

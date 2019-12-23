@@ -6,6 +6,7 @@ ru:
         address: Место проведения
         datetime: Дата и время
         description: Описание
+        pincode: Пинкод доступа
       user:
         name: Имя
         email: Email
@@ -62,6 +63,7 @@ ru:
       created: Событие создано
       updated: Событие обновлено
       destroyed: Событие уничтоженно
+      wrong_pincode: Неверный пинкод
     users:
       updated: Данные обновлены
       edit: Редактирование
@@ -190,6 +192,7 @@ ru:
         back: Назад
         delet: Удалить
         create: Создать
+        pincode_accept: Принять пинкод
         didn_t_receive_confirmation_instructions: Не получили подтверждение?
         didn_t_receive_unlock_instructions: Не получили код разблокировки?
         forgot_your_password: Забыли пароль?
