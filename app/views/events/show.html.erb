@@ -39,9 +39,9 @@
   <div class="row">
     <div class="col-md-8">
 
-      <div class="event-photos-gallery">
-        <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-      </div>
+        <div class="event-photos-gallery d-inline-block">
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+        </div>
 
       <div class="event-photo-form">
         <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} if current_user.present? %>
@@ -53,7 +53,7 @@
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
-                     collection: @event.comments.except(@new_comment).order(created_at: :desc)  %>
+                     collection: @event.comments.except(@new_comment).order(created_at: :desc) %>
         </div>
       </div>
     </div>
