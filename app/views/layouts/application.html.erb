@@ -4,7 +4,7 @@
   <title>MeetingPoint</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <script src="https://api-maps.yandex.ru/2.1?apikey=&lang=ru_RU"
+  <script src="https://api-maps.yandex.ru/2.1?apikey=<%= ENV['YANDEX_APIKEY'] %>&lang=ru_RU"
           type="text/javascript">
   </script>
 
