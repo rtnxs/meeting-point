@@ -1,11 +1,13 @@
-<div class="text-center">
+<div class="text-center mt-5 pt-5 shadow shadow-lg">
   <h1><%= @user.name %></h1>
 
   <%= image_tag user_avatar(@user) %>
 
   <% if @user == current_user %>
-    <p class="buffer-top"><%= link_to 'Редактировать профиль',
-                                      edit_user_path(@user), class: 'btn btn-default' %></p>
+    <p class="buffer-top">
+      <%= link_to 'Редактировать профиль', edit_user_path(@user),
+                  class: 'btn btn-outline-secondary' %>
+    </p>
   <% end %>
 
 
@@ -13,7 +15,7 @@
     <div class="col-md-12">
       <% if @user.events.any? %>
         <h3>Организовал:</h3>
-        <div class="row">
+        <div class="row p-5">
           <%= render partial: 'events/event', collection: @user.events %>
         </div>
       <% else %>

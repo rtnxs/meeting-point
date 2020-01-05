@@ -1,7 +1,7 @@
 <%= form_for @user, html: {multipart: true} do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
-  <div class="form-group">
+  <div class="form-group mt-3">
     <%= f.text_field :name, class: 'form-control', placeholder: t('activerecord.attributes.user.name') %>
   </div>
 
@@ -9,14 +9,17 @@
     <%= f.text_field :email, class: 'form-control', placeholder: "Email" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :avatar %>
-    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-    <%= f.file_field :avatar %>
+  <p class="text-center"><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+  <div class="input-group">
+    <div class="custom-file">
+      <%= f.label :avatar, class: 'custom-file-label', for: 'myinput' %>
+      <%= f.file_field :avatar, class: ' custom-file-input', id: 'myinput' %>
+    </div>
   </div>
 
-  <div class="actions">
+  <div class="actions buffer-top">
     <%= f.submit t('devise.registrations.edit.update'), class: 'btn btn-primary' %>
     <%= link_to t('devise.shared.links.back'), :back, class: 'btn btn-secondary float-right' %>
   </div>
 <% end %>
+
