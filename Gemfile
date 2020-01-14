@@ -31,6 +31,7 @@ gem 'fog-aws'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :production do
   gem 'pg'
@@ -39,7 +40,6 @@ end
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
