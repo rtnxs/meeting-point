@@ -8,7 +8,6 @@ RSpec.describe EventPolicy, type: :policy do
     subject { described_class.new(user, event) }
 
     it { is_expected.to permit_actions(%i[edit update destroy]) }
-    it { is_expected.to forbid_actions(%i[index new show create]) }
   end
 
   context 'when not owner' do
