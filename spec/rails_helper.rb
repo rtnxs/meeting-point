@@ -10,6 +10,9 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'pundit/rspec'
 require 'pundit/matchers'
+require 'simplecov'
+
+SimpleCov.start
 
 # Pundit::Matchers.configure do |config|
 #   config.user_alias = :account
