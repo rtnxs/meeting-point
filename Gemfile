@@ -29,7 +29,6 @@ group :development, :test do
   gem 'pundit-matchers', '~> 1.6.0'
   gem 'rspec-rails', '~> 3.4'
   gem 'sqlite3', '~> 1.4'
-  gem 'simplecov'
 end
 
 group :development do
