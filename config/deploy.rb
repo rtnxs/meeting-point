@@ -16,6 +16,7 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
+after 'deploy:restart', 'resque:restart'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 

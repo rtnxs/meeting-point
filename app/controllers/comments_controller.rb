@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
 
-  # POST /comments
   def create
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
@@ -40,14 +39,13 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body, :user_name)
-    #params.fetch(:comment, {})
   end
 
   def notify_subscribers(event, comment)
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [current_user&.email]).uniq
 
     all_emails.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_now
+      EventMailer.comment(event, comment, mail).deliver_later
     end
   end
 end
